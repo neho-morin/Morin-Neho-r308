@@ -30,8 +30,8 @@ def sauvegarder(d, chemin):
         with open(chemin, "w", encoding="utf-8") as f:
             for nom, note in d.items():
                 f.write(f"{nom}:{float(note)}\n")
-    except OSError:
-        print("Erreur lors de l'ouverture du fichier, donner un nom correcte")
+    except OSError as e:
+        print(f"Erreur code {e}")
 
 ### Création de la fonction qui va recherger
 def charger(chemin):
@@ -39,4 +39,25 @@ def charger(chemin):
     try:
         with open(chemin, "r", encoding="utf-8") as f:
             for ligne in f:
-                
+                try:
+                    ligne = ligne.strip()
+                    nom, note = ligne.split(":")
+                    d[nom] = float(note.strip())
+                except ValueError as e:
+                    print(f"Erreur de format dans la ligne '{ligne}', code {e}")
+    except OSError as e:
+        print(f"Erreur, fichier absent ou inaccessible, code {e}")
+    return d
+
+### Corps du jeu
+if __name__ == "__main__":
+    print("Dictionnaire initial:", d)
+    ajouter_etudiant(d, "David", 14)
+    print("Dictionnaire après ajout de David:", d)
+    print("Moyenne de la classe:", moyenne_classe(d))
+    meilleur = meilleur_etudiant(d)
+    print(f"Meilleur étudiant: {meilleur[0]} avec une note de {meilleur[1]}")
+    chemin_fichier = "etudiants.txt"
+    sauvegarder(d, chemin_fichier)
+    d_chargé = charger(chemin_fichier)
+    print("Dictionnaire chargé depuis le fichier:", d_chargé)
