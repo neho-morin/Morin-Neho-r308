@@ -11,10 +11,24 @@ class grille:
         #self.plateau[Ligne][Collone] = Pion
 
     def afficher(self):
-        for i in self:
-            print(self)
+        value = 0
+        for i in self.plateau:
+            val = "|"
+            t = 0
+            for x in i:
+                print(x, end=' ')
+                if t < 2:
+                    print(val, end=(' '))
+                value += 1
+                t += 1
 
+            if value == 3:
+                print("")
+                value = 0
 
+            
+           
+            
 ### Structure principale du jeu ###
 j = grille()
 j.afficher()
