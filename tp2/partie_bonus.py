@@ -1,3 +1,6 @@
+### On importe le jeur IA de la partie B ###
+from partie_b import JoueurIA
+
 class JoueurIAMalin:
     def _coup_gagnant(self, tab, symbole):
         for x in range(3):

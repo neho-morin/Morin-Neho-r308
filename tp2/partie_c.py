@@ -1,3 +1,6 @@
+### On importe de la partie A la grille ###
+from partie_a import Grille
+
 def partie(joueur_x, joueur_o, verbose=True):
     g = Grille()
     joueurs = [(joueur_x, "X"), (joueur_o, "O")]
