@@ -1,3 +1,6 @@
+### Pour le fonctionnement de la partie C ###
+from partie_a import Livre, Utilisateur
+
 class Bibliotheque:
     def __init__(self):
         self.livres = {}            # titre -> Livre
