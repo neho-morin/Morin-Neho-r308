@@ -21,7 +21,6 @@ def charger(chemin):
 
 ### Choix du mot ###
 def choisir_mot(list):
-    mot = {}
     mot = random.choice(list)
     return mot
 

@@ -38,12 +38,12 @@ class Grille:
             
            
             
-### Structure principale du jeu ###
-g = Grille()
-g.jouer(0, 0, "X"); g.jouer(0, 1, "O"); g.jouer(1, 1, "X")
-g.afficher()
-g.jouer(0, 0, "O")        # refusé : occupée
-g.jouer(3, 0, "O")        # refusé : hors grille
-print(g.est_gagnant("X")) # False
-g.jouer(2, 2, "X")
-print(g.est_gagnant("X")) # True
+### Structure principale du jeu ### --> TEST
+#g = Grille()
+#g.jouer(0, 0, "X"); g.jouer(0, 1, "O"); g.jouer(1, 1, "X")
+#g.afficher()
+#g.jouer(0, 0, "O")        # refusé : occupée
+#g.jouer(3, 0, "O")        # refusé : hors grille
+#print(g.est_gagnant("X")) # False
+#g.jouer(2, 2, "X")
+#print(g.est_gagnant("X")) # True
