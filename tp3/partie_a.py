@@ -54,7 +54,7 @@ class Utilisateur:
             livre.afficher()
 
 ### Test ###
-l = Livre("1984", "Orwell", 1949)
-print(l.emprunter("Ana"))   # True
-print(l.emprunter("Léo"))   # False
-print(l.rendre())           # True
+#l = Livre("1984", "Orwell", 1949)
+#print(l.emprunter("Ana"))   # True
+#print(l.emprunter("Léo"))   # False
+#print(l.rendre())           # True
